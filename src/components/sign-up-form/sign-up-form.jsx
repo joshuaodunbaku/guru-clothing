@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase.util";
 // components
 import FormInput from "../form-input/form-input";
@@ -16,8 +16,6 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const {displayName, email, password, confirmPassword} = formFields;
   
-  console.log(formFields);
-  
   const handleSubmit = async (event) => {
     event.preventDefault();
     if (password !== confirmPassword) {
@@ -25,16 +23,18 @@ const SignUpForm = () => {
       return;
     }
     try {
-      const {user: newUser} = await createAuthUserWithEmailAndPassword(email, password);      
+      const {user: newUser} = await createAuthUserWithEmailAndPassword(email, password);
+      console.log(newUser);
       // const userDocRef = await createUserDocumentFromAuth({...newUser, displayName});
       const userDocRef = await createUserDocumentFromAuth(newUser, {displayName});
       setFormFields(defaultFormFields);
-      console.log(userDocRef);
     } catch (error) {
       if (error.code === "auth/email-already-in-use") {
-        alert("Cannot create user, email already in use")
+        console.log("Cannot create user, email already in use");
+      } else if(error.code === "auth/weak-password") {
+        console.log(error.message);
       } else {
-        console.log("User creation encountered an error", error.code);
+        console.log("User creation encountered an error, " + error.code);
       }
     }
   }
