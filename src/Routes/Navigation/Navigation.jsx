@@ -35,7 +35,7 @@ const Navigation = () => {
               SIGN IN
             </Link>
           )}
-          <CartIcon isCartOpen={isCartOpen} setIsCartOpen={setIsCartOpen} />
+          <CartIcon />
         </div>
         {isCartOpen && <CartDropdown />}
       </div>
