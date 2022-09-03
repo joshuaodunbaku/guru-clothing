@@ -1,13 +1,20 @@
-import "./product-card.style.scss";
-import Button from "../Button/Button";
-import { CartContext } from "../../context/cart.context";
 import { useContext } from "react";
+// style
+import "./product-card.style.scss";
+// components
+import Button from "../Button/Button";
+// contexts
+import { CartContext } from "../../context/cart.context";
 
-const ProductCard = ({ product }) => {
+
+const ProductCard = ({ product, itemAdded, setItemAdded }) => {
   const { name, price, imageUrl } = product;
   const { addItemToCart } = useContext(CartContext);
 
-  const addProductToCart = () => addItemToCart(product); // It's easier to optimize
+  const addProductToCart = async() => {
+    addItemToCart(product);
+    // setItemAdded(!itemAdded)
+  }; // It's easier to optimize
 
   return (
     <div className="product-card-container">

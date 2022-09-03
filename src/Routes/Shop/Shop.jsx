@@ -5,11 +5,11 @@ import { ProductsContext } from "../../context/products.context";
 import "./Shop.style.scss";
 
 const Shop = () => {
-  const { products } = useContext(ProductsContext);
+  const { products, itemAdded, setItemAdded } = useContext(ProductsContext);
   return (
     <div className="products-container">
       {products.map((product) => (
-        <ProductCard key={product.id} product={product} />
+        <ProductCard key={product.id} product={product} itemAdded={itemAdded} setItemAdded={setItemAdded} />
       ))}
     </div>
   );
