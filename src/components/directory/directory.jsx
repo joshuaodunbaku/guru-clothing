@@ -13,7 +13,7 @@ const categories = [
     },
     {
         "id": 2,
-        "title": "Hackets",
+        "title": "Jackets",
         "imageUrl": "https://i.ibb.co/px2tCc3/jackets.png",
         "route": "shop/jackets",
     },
