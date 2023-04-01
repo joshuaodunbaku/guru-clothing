@@ -22,6 +22,7 @@ export const UserProvider = ({ children }) => {
       }
       setCurrentUser(user);
     });
+    // use effect will run return when component Unmount
     return unsubscribe;
   }, []);
 

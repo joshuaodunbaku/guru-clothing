@@ -1,5 +1,5 @@
 // style
-import "./Authentication.style.scss";
+import { AuthenticationContainer } from "./Authentication.style";
 
 import SignInForm from "../../components/sign-in-form/sign-in-form";
 // import { getRedirectResult } from "firebase/auth";
@@ -19,13 +19,13 @@ const Authentication = () => {
 
   return (
     <>
-      <div className="authentication-container">
+      <AuthenticationContainer>
         <SignInForm />
         {/* <button onClick={signInWithGoogleRedirect}>Sign In With Google Redirect</button> */}
         <SignUpForm />
-      </div>
+      </AuthenticationContainer>
     </>
-  )
-}
+  );
+};
 
 export default Authentication;

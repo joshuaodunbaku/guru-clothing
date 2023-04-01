@@ -4,6 +4,7 @@ import Navigation from "./Routes/Navigation/Navigation";
 import Authentication from "./Routes/Authentication/Authentication";
 import Shop from "./Routes/Shop/Shop";
 import Checkout from "./Routes/Checkout/Checkout";
+import Section from "./Routes/Section/Section";
 
 // const Shop = () => {
 //   return (
@@ -11,19 +12,18 @@ import Checkout from "./Routes/Checkout/Checkout";
 //   )
 // }
 
-
-
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
-        <Route path="shop" element={<Shop />} />
+        <Route path="shop/*" element={<Shop />} />
+        <Route path="shop/categories/:item" element={<Section />} />
         <Route path="checkout" element={<Checkout />} />
         <Route path="auth" element={<Authentication />} />
       </Route>
     </Routes>
-  )
-}
+  );
+};
 
 export default App;

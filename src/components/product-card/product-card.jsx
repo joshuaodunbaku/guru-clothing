@@ -1,32 +1,33 @@
 import { useContext } from "react";
-// style
-import "./product-card.style.scss";
 // components
-import Button from "../Button/Button";
+import Button, { BUTTON_TYPE_CLASSES } from "../Button/Button";
 // contexts
 import { CartContext } from "../../context/cart.context";
+// style
+import { ProductCardContainer, ProductCardFooter, ProductCardImg } from "./product-card.style.js";
 
 
 const ProductCard = ({ product, itemAdded, setItemAdded }) => {
+  console.log(product);
   const { name, price, imageUrl } = product;
   const { addItemToCart } = useContext(CartContext);
 
-  const addProductToCart = async() => {
+  const addProductToCart = async () => {
     addItemToCart(product);
     // setItemAdded(!itemAdded)
   }; // It's easier to optimize
 
   return (
-    <div className="product-card-container">
-      <img src={imageUrl} alt={name} />
-      <div className="footer">
+    <ProductCardContainer>
+      <ProductCardImg src={imageUrl} alt={name} />
+      <ProductCardFooter>
         <span className="name">{name}</span>
         <span className="price">{price}</span>
-      </div>
-      <Button buttonType={"inverted"} onClick={addProductToCart}>
+      </ProductCardFooter>
+      <Button buttonType={BUTTON_TYPE_CLASSES.inverted} onClick={addProductToCart}>
         Add to cart
       </Button>
-    </div>
+    </ProductCardContainer>
   );
 };
 

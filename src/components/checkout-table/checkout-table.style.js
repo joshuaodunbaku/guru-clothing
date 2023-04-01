@@ -1,6 +1,8 @@
-.checkout-container {
-  width: 55%;
-  min-height: 90vh;
+import styled from "styled-components";
+
+export const CheckoutTableContainer = styled.div`
+  /* width: 55%;
+  min-height: 90vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -25,7 +27,11 @@
 
   .total {
     margin-top: 30px;
-    margin-left: auto;
-    font-size: 36px;
+    /* margin-left: auto; */
+    font-size: 26px;
   }
-}
+`;
+
+// .checkout - container {
+
+// }

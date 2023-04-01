@@ -1,4 +1,5 @@
 import { createContext, useEffect, useState } from "react";
+import { getCategoriesAndDocuments } from "../utils/firebase.util";
 
 // ADD TO CART AND INCREMENT QUANTITY
 const addCartItem = async (cartItems, productToAdd) => {
@@ -94,6 +95,7 @@ export const CartProvider = ({ children }) => {
     }, count);
     console.log(count);
     setItemCount(count);
+    getCategoriesAndDocuments();
   }, [cartItems]);
 
   useEffect(() => {
