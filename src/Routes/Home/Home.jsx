@@ -1,4 +1,3 @@
-import { Outlet } from "react-router-dom";
 import { useContext } from "react";
 import Directory from "../../components/directory/directory";
 import { UserContext } from "../../context/user.context";
