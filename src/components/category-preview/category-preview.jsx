@@ -1,8 +1,6 @@
 import React from 'react';
 import ProductCard from '../product-card/product-card';
 import { CategoryPrevContainer, TitleLink, Preview } from "./category-preview.style.js";
-import MySpinner from "../Spinner/Spinner";
-import { Link } from 'react-router-dom';
 
 const CategoryPreview = ({ title, products }) => {
     return (

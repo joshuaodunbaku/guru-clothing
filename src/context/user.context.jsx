@@ -29,8 +29,7 @@ export const UserProvider = ({ children }) => {
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 };
 
-{
-  /* <UserProvider>
-    <Navigation/>
-</UserProvider> */
-}
+//   /* <UserProvider>
+//     <Navigation/>
+// </UserProvider> */
+

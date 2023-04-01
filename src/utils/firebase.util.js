@@ -35,7 +35,7 @@ const firebaseConfig = {
 
 // 1.2. Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
-
+console.log(firebaseApp);
 // 1.3. Google Provider; specific to google sign in interface
 const googleProvider = new GoogleAuthProvider(); // It is a class gotten from firebase authentication conected to google auth itself
 

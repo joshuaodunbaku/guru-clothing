@@ -1,13 +1,13 @@
-import React from 'react'
-import { useContext } from 'react';
+import React from 'react';
+// import { useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import ProductCard from '../../components/product-card/product-card';
-import { CategoriesContext } from '../../context/categories.context';
+// import ProductCard from '../../components/product-card/product-card';
+// import { CategoriesContext } from '../../context/categories.context';
 
 const Section = () => {
     const { item } = useParams();
-    const { categoriesMap } = useContext(CategoriesContext);
-    const { item: itemArr } = categoriesMap;
+    // const { categoriesMap } = useContext(CategoriesContext);
+    // const { item: itemArr } = categoriesMap;
     return (
         <>
             <h2>Welcome to the {item}</h2>
@@ -17,7 +17,7 @@ const Section = () => {
                 ))}
             </div> */}
         </>
-    )
-}
+    );
+};
 
 export default Section;

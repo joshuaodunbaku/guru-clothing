@@ -13,7 +13,7 @@ import "./navigation.styles.js";
 import { LogoContainer, NavigationContainer, NavLink, NavLinkContainer } from "./navigation.styles.js";
 
 const Navigation = () => {
-  const { isCartOpen, setIsCartOpen } = useContext(CartContext);
+  const { isCartOpen } = useContext(CartContext);
   const { currentUser } = useContext(UserContext);
 
   console.log(currentUser);

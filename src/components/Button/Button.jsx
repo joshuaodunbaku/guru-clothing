@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { CategoriesContext } from "../../context/categories.context";
 import { BaseButton, GoogleSignInButton, InvertedButton } from "./Button.style.js";
 /* 
 default
