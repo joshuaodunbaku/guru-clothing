@@ -74,7 +74,7 @@ const addCollectionAndDocuments = async (
   console.log("Done");
 };
 
-// 3.3 getting/fetching the stored data from firebase firestore
+// 2.3 getting/fetching the stored data from firebase firestore
 const getCategoriesAndDocuments = async () => {
   console.log("Hello from getCategories");
   const collectionRef = collection(db, "categories");
